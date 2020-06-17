@@ -51,9 +51,9 @@ console.log(getYears(getFinals,fifaData));
 function getWinners(callback,data) {
     const winners = [];
     callback(data).forEach(function(item){
-        if (item['Home Team Goals'] < item['Away Team Goals']){ winners.push(item['Home Team Name'])
+        if (item['Home Team Goals'] > item['Away Team Goals']){ winners.push(item['Home Team Name'])
         } 
-        else if (item['Home Team Goals'] > item['Away Team Goals']) {winners.push(item['Away Team Name'])
+        else if (item['Home Team Goals'] < item['Away Team Goals']) {winners.push(item['Away Team Name'])
        }else {
            winners.push(item['Win conditions'].split(' ')[0])
        }
